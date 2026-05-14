@@ -45,3 +45,16 @@ A automação é o componente central deste projeto. Foram implementados os segu
 1. Clone o repositório:
 ```bash
 git clone https://github.com/wagms/N2-Testes-de-Software
+```
+2. Entre na pasta do projeto e execute a aplicação Spring Boot (certifique-se de ter o Java 21 instalado):
+```bash
+./mvnw spring-boot:run
+```
+3. Acesse o sistema:
+A API e o Front-end estarão rodando localmente. Acesse pelo navegador: 
+```bash
+http://localhost:8080
+```
+ ### Vídeo Demonstrativo
+Confira a demonstração do sistema e a execução de todos os testes no link abaixo:
+
