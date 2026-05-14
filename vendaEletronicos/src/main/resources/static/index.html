@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda Eletrônicos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main id="tela-login" class="auth-page">
+    <section class="auth-card">
+        <div class="brand-area">
+            <div class="brand-icon">⚡</div>
+            <div>
+                <h1>Venda Eletrônicos</h1>
+                <p>Sistema de gestão de produtos e clientes</p>
+            </div>
+        </div>
+
+        <div class="auth-tabs">
+            <button id="btn-tab-login" class="tab-btn active" type="button">Entrar</button>
+            <button id="btn-tab-cadastro" class="tab-btn" type="button">Criar Conta</button>
+        </div>
+
+        <form id="form-login-cadastro" class="form-card">
+            <input type="hidden" id="modo-formulario" value="login" />
+
+            <div id="campo-cadastro-nome" class="form-group campo-cadastro hidden">
+                <label for="input-cadastro-nome">Nome completo</label>
+                <input id="input-cadastro-nome" data-testid="input-cadastro-nome" type="text" placeholder="Digite seu nome completo" />
+            </div>
+
+            <div class="form-group">
+                <label id="label-username" for="input-username">E-mail</label>
+                <input id="input-username" data-testid="input-username" type="text" placeholder="Digite seu e-mail" autocomplete="username" />
+            </div>
+
+            <div id="campo-cadastro-cpf" class="form-group campo-cadastro hidden">
+                <label for="input-cadastro-cpf">CPF</label>
+                <input id="input-cadastro-cpf" data-testid="input-cadastro-cpf" type="text" maxlength="14" placeholder="000.000.000-00" />
+            </div>
+
+            <div class="form-group">
+                <label for="input-password">Senha</label>
+                <input id="input-password" data-testid="input-password" type="password" placeholder="Digite sua senha" autocomplete="current-password" />
+            </div>
+
+            <div id="campo-cadastro-confirmar-senha" class="form-group campo-cadastro hidden">
+                <label for="input-confirmar-password">Confirmar senha</label>
+                <input id="input-confirmar-password" data-testid="input-confirmar-password" type="password" placeholder="Confirme sua senha" />
+            </div>
+
+            <button id="btn-login" data-testid="btn-login" class="btn-primary full" type="submit">Entrar</button>
+        </form>
+    </section>
+</main>
+
+<main id="app" class="app-shell hidden">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>⚡</span>
+            <strong>Venda Eletrônicos</strong>
+        </div>
+
+        <nav class="menu">
+            <button id="btn-menu-dashboard" class="menu-btn active" type="button">Dashboard</button>
+            <button id="btn-menu-produtos" class="menu-btn" type="button">Produtos</button>
+            <button id="btn-menu-clientes" class="menu-btn" type="button">Clientes</button>
+        </nav>
+
+        <button id="btn-logout" class="btn-logout" type="button">Sair</button>
+    </aside>
+
+    <section class="content">
+        <section id="tela-dashboard" class="screen active-screen">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Painel administrativo</p>
+                    <h2>Bem-vindo ao sistema</h2>
+                    <p>Gerencie produtos, clientes e dados comerciais de forma simples.</p>
+                </div>
+            </header>
+
+            <div class="cards-grid">
+                <article class="info-card">
+                    <span class="card-icon">📦</span>
+                    <h3 id="total-produtos">0</h3>
+                    <p>Produtos cadastrados</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="card-icon">👥</span>
+                    <h3 id="total-clientes">0</h3>
+                    <p>Clientes cadastrados</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="card-icon">✅</span>
+                    <h3>Online</h3>
+                    <p>Sistema conectado</p>
+                </article>
+            </div>
+
+            <div class="welcome-panel">
+                <h3>Resumo do projeto</h3>
+                <p>Esta interface foi criada em HTML, CSS e JavaScript puro, consumindo a API do back-end Spring Boot.</p>
+            </div>
+        </section>
+
+        <section id="tela-produtos" class="screen">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Cadastro</p>
+                    <h2>Produtos</h2>
+                    <p>Cadastre e visualize os eletrônicos disponíveis.</p>
+                </div>
+
+                <button id="btn-novo-produto" class="btn-primary" type="button">Novo Produto</button>
+            </header>
+
+            <section id="form-produto-area" class="panel hidden">
+                <div class="panel-title">
+                    <h3>Novo Produto</h3>
+                    <button id="btn-fechar-form-produto" class="btn-light" type="button">Fechar</button>
+                </div>
+
+                <form id="form-produto" class="grid-form">
+                    <div class="form-group">
+                        <label for="input-produto-nome">Nome</label>
+                        <input id="input-produto-nome" data-testid="input-produto-nome" type="text" placeholder="Ex: iPhone 15" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-produto-marca">Marca</label>
+                        <input id="input-produto-marca" data-testid="input-produto-marca" type="text" placeholder="Ex: Apple" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-produto-preco">Preço</label>
+                        <input id="input-produto-preco" data-testid="input-produto-preco" type="number" step="0.01" min="0" placeholder="Ex: 5000.00" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select-produto-categoria">Categoria</label>
+                        <select id="select-produto-categoria" data-testid="select-produto-categoria">
+                            <option value="">Selecione</option>
+                            <option value="SMARTPHONE">Smartphone</option>
+                            <option value="TABLET">Tablet</option>
+                            <option value="NOTEBOOK">Notebook</option>
+                            <option value="ACESSORIO">Acessório</option>
+                            <option value="SMARTWATCH">Smartwatch</option>
+                        </select>
+                    </div>
+
+                    <button id="btn-salvar-produto" data-testid="btn-salvar-produto" class="btn-primary" type="submit">Salvar Produto</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="table-header">
+                    <h3>Lista de Produtos</h3>
+                    <button id="btn-atualizar-produtos" class="btn-light" type="button">Atualizar</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Marca</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tabela-produtos">
+                        <tr>
+                            <td colspan="6" class="empty">Nenhum produto carregado.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section id="tela-clientes" class="screen">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Cadastro</p>
+                    <h2>Clientes</h2>
+                    <p>Cadastre e visualize os clientes do sistema.</p>
+                </div>
+
+                <button id="btn-novo-cliente" class="btn-primary" type="button">Novo Cliente</button>
+            </header>
+
+            <section id="form-cliente-area" class="panel hidden">
+                <div class="panel-title">
+                    <h3>Novo Cliente</h3>
+                    <button id="btn-fechar-form-cliente" class="btn-light" type="button">Fechar</button>
+                </div>
+
+                <form id="form-cliente" class="grid-form">
+                    <div class="form-group">
+                        <label for="input-cliente-nome">Nome completo</label>
+                        <input id="input-cliente-nome" data-testid="input-cliente-nome" type="text" placeholder="Ex: João Silva" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-cliente-cpf">CPF</label>
+                        <input id="input-cliente-cpf" data-testid="input-cliente-cpf" type="text" maxlength="14" placeholder="000.000.000-00" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-cliente-email">E-mail</label>
+                        <input id="input-cliente-email" data-testid="input-cliente-email" type="email" placeholder="Ex: cliente@email.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-cliente-telefone">Telefone</label>
+                        <input id="input-cliente-telefone" data-testid="input-cliente-telefone" type="text" maxlength="15" placeholder="Ex: 62999999999" />
+                    </div>
+
+                    <button id="btn-salvar-cliente" data-testid="btn-salvar-cliente" class="btn-primary" type="submit">Salvar Cliente</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="table-header">
+                    <h3>Lista de Clientes</h3>
+                    <button id="btn-atualizar-clientes" class="btn-light" type="button">Atualizar</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome completo</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tabela-clientes">
+                        <tr>
+                            <td colspan="6" class="empty">Nenhum cliente carregado.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </section>
+</main>
+
+<div id="popup-overlay" class="popup-overlay hidden">
+    <div id="popup-box" class="popup-box">
+        <h3 id="popup-titulo">Título</h3>
+        <p id="popup-mensagem">Mensagem</p>
+
+        <div id="popup-acoes" class="popup-actions">
+            <button id="btn-popup-cancelar" class="btn-light" type="button">Cancelar</button>
+            <button id="btn-popup-confirmar" class="btn-primary" type="button">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<script src="Tela.js"></script>
+</body>
+</html>
