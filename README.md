@@ -2,7 +2,7 @@
 
 Este projeto consiste em um sistema funcional de **Venda de Eletrônicos**, desenvolvido como parte da Atividade Prática Avaliativa da disciplina de Testes de Software (Prof. Reinaldo Jr).
 
-##Integrantes do Grupo
+## Integrantes do Grupo
 * Wagner Gomes
 * Rayssa Rodrigues
 * Pedro Assumpção
@@ -10,7 +10,7 @@ Este projeto consiste em um sistema funcional de **Venda de Eletrônicos**, dese
 
 ---
 
-##Proposta do Sistema
+## Proposta do Sistema
 O sistema é focado no nicho de mercado de eletrônicos, permitindo a gestão de produtos e clientes. A aplicação segue o modelo cliente-servidor e prioriza a robustez técnica através da implementação de testes automatizados em diferentes níveis.
 
 ### Requisitos Funcionais Atendidos:
@@ -20,7 +20,7 @@ O sistema é focado no nicho de mercado de eletrônicos, permitindo a gestão de
 
 ---
 
-##Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Categoria | Tecnologia |
 | :--- | :--- |
@@ -31,7 +31,7 @@ O sistema é focado no nicho de mercado de eletrônicos, permitindo a gestão de
 
 ---
 
-##Estrutura de Testes Automatizados
+## Estrutura de Testes Automatizados
 A automação é o componente central deste projeto. Foram implementados os seguintes níveis:
 
 1. **Testes Unitários (JUnit):** Validação de lógicas de negócio internas, como formatação de dados e cálculos.
@@ -40,7 +40,7 @@ A automação é o componente central deste projeto. Foram implementados os segu
 
 ---
 
-##Instruções de Execução
+## Instruções de Execução
 
 1. Clone o repositório:
 ```bash
